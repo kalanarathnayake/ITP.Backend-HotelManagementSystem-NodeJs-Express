@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "a80fa0d4-ab7e-4e85-a2a1-e4630004140d",
+		"name": "ITP backend - Thanuka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11839336"
+	},
+	"item": [
+		{
+			"name": "GroupRecords",
+			"item": [
+				{
+					"name": "Get All Group records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/group/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"group",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Group record by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/group/645248b666eeb86c39875340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"group",
+								"645248b666eeb86c39875340"
+							]
+						},
+						"description": "This API provides access a specific news based on the news id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/group/645248b666eeb86c39875340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"group",
+								"645248b666eeb86c39875340"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API provides deletion of a specific news. Used by admin, in order to delete any unwanted news articles."
+					},
+					"response": []
+				},
+				{
+					"name": "Add Group record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"participants\": \"Isuri Punchihewa\",\r\n    \"grpName\": \"Test Group Name\",\r\n    \"date\": \"03/04/2017\",\r\n    \"description\": \"Test Description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/group/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"group",
+								"add"
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Group record",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"participants\": \"Kalana Rathnayake\",\r\n    \"grpName\": \"Updated Group Name\",\r\n    \"date\": \"03/04/2023\",\r\n    \"description\": \"Test Updated Description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/group/645248b666eeb86c39875340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"group",
+								"645248b666eeb86c39875340"
+							]
+						},
+						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "emp add and get",
+			"item": [
+				{
+					"name": "Get All Meeting records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/employee/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Add Meeting record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \" Indu Ranasinghe \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"add"
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
