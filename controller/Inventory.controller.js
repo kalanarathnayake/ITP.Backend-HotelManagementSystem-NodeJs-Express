@@ -2,7 +2,7 @@ const Inventory = require("../model/inventory.model");
 
 // add item to inventory
 const addInventory = async (req, res) => {
-  const { itemId, itemName, itemCategory, quantity, location } =
+  const { itemId, itemName, itemCategory, quantity, location, shortage } =
     req.body;
 
   const inventory = new Inventory({
@@ -10,7 +10,8 @@ const addInventory = async (req, res) => {
     itemName,
     itemCategory,
     quantity,
-    location
+    location,
+    shortage
   });
 
   await inventory
@@ -48,6 +49,7 @@ const updateInventory = async (req, res) => {
       existingInventory.itemCategory = req.body.itemCategory;
       existingInventory.quantity = req.body.quantity;
       existingInventory.location = req.body.location;
+      existingInventory.Shortage = req.body.Shortage;
 
       existingInventory
         .save()
