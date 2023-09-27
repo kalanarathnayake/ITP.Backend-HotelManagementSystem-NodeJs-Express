@@ -1,0 +1,981 @@
+{
+	"info": {
+		"_postman_id": "166dc493-2681-4dfe-955f-4f68f4147b3e",
+		"name": "Backend Practice collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11839336"
+	},
+	"item": [
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Add Inventory record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": \"ID008\",\r\n    \"itemName\": \"Soap\",\r\n    \"itemCategory\": \"Cat1\",\r\n    \"quantity\": 100,\r\n    \"location\": \"A-1-2\",\r\n    \"shortage\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/inventory/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventory",
+								""
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				},
+				{
+					"name": "get all inventory data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/inventory/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventory",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Get inventory record by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/inventory/6512971f5e0a357e2f2923bf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventory",
+								"6512971f5e0a357e2f2923bf"
+							]
+						},
+						"description": "This API provides access a specific news based on the news id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inventory record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/inventory/6512971f5e0a357e2f2923bf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventory",
+								"6512971f5e0a357e2f2923bf"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API provides deletion of a specific news. Used by admin, in order to delete any unwanted news articles."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Inventory record",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": \"ID002\",\r\n    \"itemName\": \"Pillow\",\r\n    \"itemCategory\": \"Cat2\",\r\n    \"quantity\": 200,\r\n    \"location\": \"A-1-2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/inventory/651297805e0a357e2f2923c4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventory",
+								"651297805e0a357e2f2923c4"
+							]
+						},
+						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory Orders",
+			"item": [
+				{
+					"name": "Add Inventory order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"ID001\",\r\n    \"date\": \"2/09/62023\",\r\n    \"supplier\": \"Sithija Suppliers\",\r\n    \"itemType\": \"Soap\",\r\n    \"requestedQuantity\": \"1000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/inventoryOrders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventoryOrders",
+								""
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				},
+				{
+					"name": "get all inventory Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/inventoryOrders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventoryOrders",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Get inventory Order record by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/inventoryOrders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventoryOrders"
+							]
+						},
+						"description": "This API provides access a specific news based on the news id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inventory Order record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/inventoryOrders/65129fafda73ff106585b15e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventoryOrders",
+								"65129fafda73ff106585b15e"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API provides deletion of a specific news. Used by admin, in order to delete any unwanted news articles."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Inventory Order record",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"ID001\",\r\n    \"date\": \"12/09/62023\",\r\n    \"supplier\": \"Naween Suppliers\",\r\n    \"itemType\": \"Soap\",\r\n    \"requestedQuantity\": \"3000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/inventoryOrders/6512a0341a9544ee282a117a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inventoryOrders",
+								"6512a0341a9544ee282a117a"
+							]
+						},
+						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer functions",
+			"item": [
+				{
+					"name": "Add new customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Indu\",\r\n    \"lastName\": \"Rathnayake\",\r\n    \"phone1\": \"0771556157\",\r\n    \"phone2\": \"\",\r\n    \"address\": \"Baddegoda, Bandaragama\",\r\n    \"email\": \"kalanagayanga8@gmail.com\",\r\n    \"country\": \"SriLanka\",\r\n    \"pass\": \"1234\",\r\n    \"cPass\": \"1234\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/customer/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								""
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				},
+				{
+					"name": "get all customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/customer/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer record by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/customer/6513d0b4ad0c5beb60ef4280",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"6513d0b4ad0c5beb60ef4280"
+							]
+						},
+						"description": "This API provides access a specific news based on the news id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inventory Order record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/customer/6513d0b4ad0c5beb60ef4280",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"6513d0b4ad0c5beb60ef4280"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API provides deletion of a specific news. Used by admin, in order to delete any unwanted news articles."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Customer details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"sudu\",\r\n    \"lastName\": \"Kavinda\",\r\n    \"phone1\": \"0718002631\",\r\n    \"phone2\": \"0771556157\",\r\n    \"address\": \"Baddegoda, Bandaragama\",\r\n    \"email\": \"kalanagayanga8@gmail.com\",\r\n    \"country\": \"SriLanka\",\r\n    \"pass\": \"1234\",\r\n    \"cPass\": \"1234\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/customer/6513bd46df8b74921f87d09a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customer",
+								"6513bd46df8b74921f87d09a"
+							]
+						},
+						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee functions",
+			"item": [
+				{
+					"name": "Add new employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Kalana\",\r\n    \"lastName\": \"Rathnayake\",\r\n    \"empId\": \"EMP231\",\r\n    \"position\": \"TechLead\",\r\n    \"salary\": \"500000\",\r\n    \"gender\": \"Male\",\r\n    \"age\": \"39\",\r\n    \"phoneNumber\": \"0147852369\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								""
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				},
+				{
+					"name": "get all employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/employee/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee record by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/employee/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								""
+							]
+						},
+						"description": "This API provides access a specific news based on the news id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete employee record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/employee/6513bd46df8b74921f87d09a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"6513bd46df8b74921f87d09a"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API provides deletion of a specific news. Used by admin, in order to delete any unwanted news articles."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit employee details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Kalana\",\r\n    \"lastName\": \"Rathnayake\",\r\n    \"empId\": \"EMP231\",\r\n    \"position\": \"TechLead\",\r\n    \"salary\": \"500000\",\r\n    \"gender\": \"Male\",\r\n    \"age\": \"39\",\r\n    \"phoneNumber\": \"0147852369\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/employee/6513bd46df8b74921f87d09a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"employee",
+								"6513bd46df8b74921f87d09a"
+							]
+						},
+						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Request feature",
+			"item": [
+				{
+					"name": "Add new customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Test DescriptionTest DescriptionTest DescriptionTest Description\",\r\n    \"email\": \"kalanagayanga8@gmail.com\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/customerReq/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customerReq",
+								""
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				},
+				{
+					"name": "get all customer requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/customerReq/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customerReq",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer request by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/customerReq/6513d02fad0c5beb60ef4277",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customerReq",
+								"6513d02fad0c5beb60ef4277"
+							]
+						},
+						"description": "This API provides access a specific news based on the news id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inventory Order record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/customerReq/6513d02fad0c5beb60ef4277",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customerReq",
+								"6513d02fad0c5beb60ef4277"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API provides deletion of a specific news. Used by admin, in order to delete any unwanted news articles."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Customer details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Test edited Description\",\r\n    \"email\": \"kosalacf8@gmail.com\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/customerReq/6513d02fad0c5beb60ef4277",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"customerReq",
+								"6513d02fad0c5beb60ef4277"
+							]
+						},
+						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Leave feature",
+			"item": [
+				{
+					"name": "Add new customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Kalana \",\r\n    \"lastName\": \"Rathnayake\",\r\n    \"empId\": \"EMP001\",\r\n    \"position\": \"Software Engineer\",\r\n    \"fromD\": \"2/09/2023\",\r\n    \"toD\": \"4/09/2023\",\r\n    \"nod\": \"2\",\r\n    \"reason\": \"Personal Reason\",\r\n    \"status\": \"Approved\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/leave/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"leave",
+								""
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				},
+				{
+					"name": "get all customer requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/leave/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"leave",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer request by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/leave/651409ac85168f8d2662ce7d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"leave",
+								"651409ac85168f8d2662ce7d"
+							]
+						},
+						"description": "This API provides access a specific news based on the news id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inventory Order record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/leave/651409ac85168f8d2662ce7d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"leave",
+								"651409ac85168f8d2662ce7d"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API provides deletion of a specific news. Used by admin, in order to delete any unwanted news articles."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Customer details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Kalana \",\r\n    \"lastName\": \"Rathnayake\",\r\n    \"empId\": \"EMP001\",\r\n    \"position\": \"Software Engineer\",\r\n    \"fromD\": \"2/09/2023\",\r\n    \"toD\": \"4/09/2023\",\r\n    \"nod\": \"2\",\r\n    \"reason\": \"Personal Reason\",\r\n    \"status\": \"Declined\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/leave/651409ac85168f8d2662ce7d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"leave",
+								"651409ac85168f8d2662ce7d"
+							]
+						},
+						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
