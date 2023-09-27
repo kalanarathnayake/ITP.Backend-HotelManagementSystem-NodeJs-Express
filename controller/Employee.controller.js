@@ -1,16 +1,26 @@
 const Employee = require("../model/Employee.model");
 
-// add Employee
+//add employee function
 const addEmployee = async (req, res) => {
-    const {name} = req.body;
+    const { firstName, lastName, empId, position, salary, gender, age, phoneNumber } =
+        req.body;
+
     const employee = new Employee({
-        name,
+        firstName,
+        lastName,
+        empId,
+        position,
+        salary,
+        gender,
+        age,
+        phoneNumber
     });
 
-    await employee.save()
-        .then(() => res.json('Emp added!'+ employee))
-        .catch(err => res.status(400).json('Error (create): ' + err));
-}
+    await employee
+        .save()
+        .then(() => res.json('Employee added!'))
+        .catch((error) => res.status(400).json("Error: " + error));
+};
 
 // get all Employee
 const getEmployee = async (req, res) => {
@@ -22,8 +32,49 @@ const getEmployee = async (req, res) => {
     }
 }
 
+//get employee by id
+const getEmployeeById = async (req, res) => {
+    try {
+        const employee = await Employee.findById(req.params.id);
+        res.json(employee);
+    } catch (error) {
+        res.status(500).send("Server Error" + error);
+    }
+};
+
+const updateEmployee = async (req, res) => {
+    Employee.findByIdAndUpdate(req.params.id)
+        .then((existingEmployee) => {
+            existingEmployee.firstName = req.body.firstName;
+            existingEmployee.lastName = req.body.lastName;
+            existingEmployee.empId = req.body.empId;
+            existingEmployee.position = req.body.position;
+            existingEmployee.salary = req.body.salary;
+            existingEmployee.gender = req.body.gender;
+            existingEmployee.age = req.body.age;
+            existingEmployee.phoneNumber = req.body.phoneNumber;
+
+            existingEmployee
+                .save()
+                .then(() => res.json('Employee updated!'))
+                .catch((error) => res.status(400).json("Error: " + error));
+        })
+        .catch((error) => res.status(400).json("Error: " + error));
+};
+
+//delete employee details
+const deleteEmployee = async (req, res) => {
+    Employee.findByIdAndDelete(req.params.id)
+        .then((deletedEmployee) => {
+            res.json('Employee deleted');
+        })
+        .catch((error) => res.status(400).json("Error: " + error));
+};
 //export 
 module.exports = {
     addEmployee,
     getEmployee,
+    getEmployeeById,
+    updateEmployee,
+    deleteEmployee
 };
