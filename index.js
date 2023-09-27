@@ -21,6 +21,8 @@ app.use('/group', require('./route/group.route'));
 app.use('/employee', require('./route/employee.route'));
 app.use('/inventory', require('./route/inventory.route'));
 app.use('/inventoryOrders', require('./route/inventoryOrders.route'));
+app.use('/customer', require('./route/customer.route'));
+app.use('/customerReq', require('./route/customerReq.route'));
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
