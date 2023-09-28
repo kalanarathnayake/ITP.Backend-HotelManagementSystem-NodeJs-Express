@@ -24,6 +24,7 @@ app.use('/inventoryOrders', require('./route/inventoryOrders.route'));
 app.use('/customer', require('./route/customer.route'));
 app.use('/customerReq', require('./route/customerReq.route'));
 app.use('/leave', require('./route/leave.route'));
+app.use('/user', require('./route/user.route'));
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);

@@ -9,8 +9,7 @@ const inventorySchema = new Schema({
     quantity : {type : String, required : true},
     location : {type : String, required : true},
     shortage : {type : Boolean, required : true},
-    note : {type : Boolean, required : false}
-    
+    note : {type : String, required : false}
 },{
         timestamps : true,
 });

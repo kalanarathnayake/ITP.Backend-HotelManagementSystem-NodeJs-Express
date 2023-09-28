@@ -50,7 +50,7 @@ const updateInventory = async (req, res) => {
       existingInventory.itemCategory = req.body.itemCategory;
       existingInventory.quantity = req.body.quantity;
       existingInventory.location = req.body.location;
-      existingInventory.Shortage = req.body.Shortage;
+      existingInventory.shortage = req.body.shortage;
       existingInventory.note = req.body.note;
 
       existingInventory
