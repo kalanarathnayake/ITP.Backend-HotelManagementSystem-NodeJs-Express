@@ -73,10 +73,23 @@ const deleteLeave = async (req, res) => {
         .catch((error) => res.status(400).json("Error: " + error));
 };
 
+const updateStatus = async (req, res) => {
+    Leave.findByIdAndUpdate(req.params.id)
+        .then((existingLeave) => {
+            existingLeave.status = req.body.status;
+            existingLeave
+                .save()
+                .then(() => res.json('Leave Status updated!'))
+                .catch((error) => res.status(400).json("Error: (update)" + error));
+        })
+        .catch((error) => res.status(400).json("Error: (update)" + error));
+};
+
 module.exports = {
     addLeave,
     getLeave,
     getLeaveById,
     updateLeave,
-    deleteLeave
-  }
+    deleteLeave,
+    updateStatus
+}

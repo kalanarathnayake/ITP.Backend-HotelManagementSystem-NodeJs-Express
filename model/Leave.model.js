@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const leaveSchema = new Schema({
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    empId: { type: String, required: true },
-    position: { type: String, required: false },
-    fromD: { type: Date, required: true },
-    toD: { type: Date, required: true },
-    nod: { type: String, required: true },
-    reason: { type: String, required: true },
-    status: { type: String, required: true },
+    firstName: { type: String },
+    lastName: { type: String },
+    empId: { type: String },
+    position: { type: String},
+    fromD: { type: Date },
+    toD: { type: Date },
+    nod: { type: String },
+    reason: { type: String },
+    status: { type: String },
 
 }, {
     timestamps: true,

@@ -6,13 +6,15 @@ const {
     getLeave,
     getLeaveById,
     updateLeave,
-    deleteLeave
+    deleteLeave,
+    updateStatus
 } = require("../controller/Leave.controller");
 
 router.get("/", getLeave);
 router.get("/:id", getLeaveById);
 router.post("/", addLeave);
 router.put("/:id", updateLeave);
+router.put("/status/:id", updateStatus);
 router.delete("/:id", deleteLeave);
 
 module.exports = router;
