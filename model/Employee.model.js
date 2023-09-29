@@ -9,7 +9,7 @@ const employeeSchema = new Schema({
     salary: { type: String, required: true },
     gender: { type: String, required: true },
     age: { type: String, required: true },
-    phoneNumber: { type: String, required: true },
+    phoneNumber: { type: String, required: true }
 }, {
     timestamps: true,
 

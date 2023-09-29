@@ -22,7 +22,7 @@ app.use('/employee', require('./route/employee.route'));
 app.use('/inventory', require('./route/inventory.route'));
 app.use('/inventoryOrders', require('./route/inventoryOrders.route'));
 app.use('/customer', require('./route/customer.route'));
-app.use('/customerReq', require('./route/customerReq.route'));
+app.use('/customerFeedback', require('./route/customerFeedback.route'));
 app.use('/leave', require('./route/leave.route'));
 app.use('/user', require('./route/user.route'));
 

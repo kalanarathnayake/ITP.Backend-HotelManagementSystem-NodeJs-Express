@@ -53,7 +53,6 @@ const updateEmployee = async (req, res) => {
             existingEmployee.gender = req.body.gender;
             existingEmployee.age = req.body.age;
             existingEmployee.phoneNumber = req.body.phoneNumber;
-
             existingEmployee
                 .save()
                 .then(() => res.json('Employee updated!'))

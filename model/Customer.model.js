@@ -6,11 +6,12 @@ const customerSchema = new Schema({
     lastName: { type: String, required: true },
     phone1: { type: String, required: true },
     phone2: { type: String, required: false },
-    address: { type: String, unique: true, required: true },
-    email: { type: String, required: true },
+    address: { type: String,  required: true },
+    email: { type: String,unique: true, required: true },
     country: { type: String, required: true },
     pass: { type: String, required: true },
     cPass: { type: String, required: true },
+    role:{type: String, required: true}
 
 }, {
     timestamps: true,

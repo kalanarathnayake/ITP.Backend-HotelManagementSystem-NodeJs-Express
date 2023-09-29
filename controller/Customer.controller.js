@@ -2,7 +2,7 @@ const Customer = require("../model/Customer.model");
 
 //Add new customer
 const addCustomer = async (req, res) => {
-    const { firstName, lastName, phone1, phone2, address, email, country, pass, cPass } = req.body;
+    const { firstName, lastName, phone1, phone2, address, email, country, pass, cPass,role } = req.body;
 
     const customer = new Customer({
         firstName,
@@ -14,6 +14,7 @@ const addCustomer = async (req, res) => {
         country,
         pass,
         cPass,
+        role
     });
 
     await customer
@@ -60,6 +61,7 @@ const updateCustomer = async (req, res) => {
             existingCustomer.country = req.body.country;
             existingCustomer.pass = req.body.pass;
             existingCustomer.cPass = req.body.cPass;
+            existingCustomer.role = req.body.role;
 
             existingCustomer
                 .save()
