@@ -17,7 +17,7 @@ async function connectMongoDB() {
   await mongoose.connect('mongodb+srv://project1:project1@cluster0.jjwdcud.mongodb.net/?retryWrites=true&w=majority');
 }
 
-app.use('/group', require('./route/group.route'));
+// app.use('/group', require('./route/group.route'));
 app.use('/employee', require('./route/employee.route'));
 app.use('/inventory', require('./route/inventory.route'));
 app.use('/inventoryOrders', require('./route/inventoryOrders.route'));
